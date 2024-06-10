@@ -1,2 +1,2 @@
-My Leetcode Sol (that i have solved so far ) with explanation if  the explanation isn't obvious
-<br> i know these are unnecessary but it gets me a habbit of github and everyone can enjoy detailed sol
+My LeetCode Solutions with Detailed Explanations
+This repository contains my solutions to various LeetCode problems, each accompanied by detailed explanations. While some explanations might seem superfluous, this practice helps me develop a consistent habit of using GitHub and contributes to a shared resource that others can benefit from. I hope these detailed solutions provide clarity and aid in understanding the problem-solving process.
