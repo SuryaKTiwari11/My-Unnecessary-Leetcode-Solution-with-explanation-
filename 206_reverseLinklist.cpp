@@ -12,7 +12,23 @@ struct ListNode
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-class Solution
+class Solution //recursive
+{
+public:
+    ListNode *reverseList(ListNode *head)
+    {
+        if (head == nullptr or head->next == nullptr)
+        {
+            return head;
+        }
+        ListNode *temp = reverseList(head->next);
+        // focus on the last 2 nodes
+        head->next->next = head;
+        head->next = nullptr;
+        return temp;
+    }
+};
+class Solution //iterative
 {
 public:
     ListNode *reverseList(ListNode *head)

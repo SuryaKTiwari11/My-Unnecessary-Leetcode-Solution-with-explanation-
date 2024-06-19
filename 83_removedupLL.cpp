@@ -8,7 +8,32 @@ struct ListNode
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-class Solution
+class Solution //recursion
+{
+public:
+    ListNode *deleteDuplicates(ListNode *head)
+    {
+        // base case
+        if (head == nullptr or head->next == nullptr)
+        {
+            return head;
+        }
+
+        if (head->val == head->next->val)
+        {
+            ListNode *temp = head->next;
+            head->next = head->next->next;
+            delete (temp);
+            deleteDuplicates(head);
+        }
+        else
+        {
+            deleteDuplicates(head->next);
+        }
+        return head;
+    }
+};
+class Solution //iterative
 {
 public:
     ListNode *deleteDuplicates(ListNode *head)
