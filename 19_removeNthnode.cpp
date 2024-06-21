@@ -39,7 +39,9 @@ public:
         }
 
         // if that is not the case
-        // we move both the pointer until fast reaches the end
+        // we move both the pointer until fast reaches the last node 
+        // we stay 1 behind the deletion node because we want to make changes to it 
+        //if we want to delete something we have to stay 1 behind it in linklist
         // we will increase them both by 1
         // and this will give us the node which the b4 the deleting node
         while (fast->next != nullptr)
