@@ -6,7 +6,7 @@ public:
     stack<int> st;
     stack<int> st_min;
     MinStack() {}
-
+    //main thing bout this ques is thinking bout the fact that u have to use 2 stacks
     void push(int val)
     {
         int temp = val;

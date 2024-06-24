@@ -24,30 +24,62 @@ public:
     }
 };
 
-class Solution {
+class Solution
+{
 public:
-    int removeElement(vector<int>& nums, int val) {
+    int removeElement(vector<int> &nums, int val)
+    {
         int low = 0;
-        int high = nums.size()-1;
+        int high = nums.size() - 1;
 
-            //this was my intuitive code 
-            // i thought find 2 and putting them in the back 
-            // n popping the array 
-            //however this failed in the edge case
-        
-        while( low<=high){
-            if(nums[high]==val){
+        // this was my intuitive code
+        //  i thought find 2 and putting them in the back
+        //  n popping the array
+        // however this failed in the edge case
+
+        while (low <= high)
+        {
+            if (nums[high] == val)
+            {
                 nums.pop_back();
                 high--;
             }
-            if(nums[low]==val){
-                swap(nums[low],nums[high]);
+            if (nums[low] == val)
+            {
+                swap(nums[low], nums[high]);
                 nums.pop_back();
                 high--;
-               
             }
             low++;
-
+        }
+        return nums.size();
+    }
+};
+class Solution
+{
+public:
+    int removeElement(vector<int> &nums, int val)
+    {
+        int low = 0;
+        int high = nums.size() - 1;
+        while (low <= high)
+        {
+            if (nums[high] == val)
+            {
+                nums.pop_back();
+                high--;
+            }
+            else if (nums[low] == val and nums[high] != val)
+            {
+                swap(nums[low], nums[high]);
+                low++;
+                high--;
+                nums.pop_back();
+            }
+            else
+            {
+                low++;
+            }
         }
         return nums.size();
     }
